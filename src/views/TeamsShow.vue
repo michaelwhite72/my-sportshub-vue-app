@@ -1,0 +1,24 @@
+<template>
+  <div class="teams-show">
+    <h1>Show Team</h1>
+
+    <p>{{ team }}</p>
+  </div>
+</template>
+<script>
+import axios from "axios";
+
+export default {
+  data: function() {
+    return {
+      team: {},
+    };
+  },
+  created: function() {
+    axios.get("/api/teams/1").then((response) => {
+      console.log(response.data);
+      this.team = response.data;
+    });
+  },
+};
+</script>

@@ -4,6 +4,10 @@ import Home from '../views/Home.vue';
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import UserTeamsIndex from "../views/UserTeamsIndex.vue";
+import TeamsIndex from "../views/TeamsIndex.vue";
+import TeamsShow from "../views/TeamsShow.vue";
+import UsersEdit from "../views/UsersEdit.vue";
 
 Vue.use(VueRouter)
 
@@ -27,6 +31,26 @@ const routes = [
     path: '/logout',
     name: 'logout, ',
     component: Logout
+  },
+  {
+    path: '/user_teams',
+    name: 'user-teams, ',
+    component: UserTeamsIndex
+  },
+  {
+    path: '/teams',
+    name: 'teams',
+    component: TeamsIndex
+  },
+  {
+    path: '/teams/:id',
+    name: 'teams-show',
+    component: TeamsShow
+  },
+  {
+    path: '/users/:id',
+    name: 'users-edit',
+    component: UsersEdit
   },
   // {
   //   path: '/about',
