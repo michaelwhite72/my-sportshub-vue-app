@@ -2,7 +2,13 @@
   <div class="teams">
     <h1>All Teams</h1>
 
-    <p>{{ teams }}</p>
+    <!-- <p>{{ teams }}</p> -->
+
+    <div v-for="team in teams">
+      <h3>Team: {{ team.name }}</h3>
+      <p>League: {{ team.league }}</p>
+      <p></p>
+    </div>
   </div>
 </template>
 <script>

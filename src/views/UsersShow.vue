@@ -2,7 +2,14 @@
   <div class="users-show">
     <h1>User Information</h1>
 
-    <p>{{ user }}</p>
+    <h3>Name: {{ user.name }}</h3>
+    <h3>Email: {{ user.email }}</h3>
+    <h4>Favorite Teams</h4>
+    <div v-for="team in user.teams">
+      <p>{{ team.name }}</p>
+    </div>
+    <button v-on:click="UpdateUser()">Update</button>
+    <button v-on:click="DeleteUser()">Delete</button>
   </div>
 </template>
 <script>
