@@ -7,7 +7,7 @@ import Logout from "../views/Logout.vue";
 import UserTeamsIndex from "../views/UserTeamsIndex.vue";
 import TeamsIndex from "../views/TeamsIndex.vue";
 import TeamsShow from "../views/TeamsShow.vue";
-import UsersEdit from "../views/UsersEdit.vue";
+import UsersShow from "../views/UsersShow.vue";
 
 Vue.use(VueRouter)
 
@@ -49,8 +49,8 @@ const routes = [
   },
   {
     path: '/users/:id',
-    name: 'users-edit',
-    component: UsersEdit
+    name: 'users-show',
+    component: UsersShow
   },
   // {
   //   path: '/about',

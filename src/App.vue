@@ -8,7 +8,7 @@
       <router-link to="/user_teams">User Teams</router-link> |
       <router-link to="/teams">All Teams</router-link> |
       <router-link to="/teams/:id">Show Team</router-link> |
-      <router-link to="/users/:id">Update User</router-link> |
+      <router-link to="/users/:id">Show User</router-link> |
 
       <!-- <router-link to="/about">About</router-link> -->
     </div>
