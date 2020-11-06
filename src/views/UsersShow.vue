@@ -1,7 +1,7 @@
 <template>
   <div class="users-show">
     <h1>User Information</h1>
-
+    {{ user.id }}
     <h3>Name: {{ user.name }}</h3>
     <h3>Email: {{ user.email }}</h3>
     <h4>Favorite Teams</h4>
@@ -11,7 +11,7 @@
     <router-link :to="`/users/${user.id}/edit`">
       <button>Update</button></router-link
     >
-    <button v-on:click="DeleteUser()">Delete</button>
+    <button v-on:click="deleteUser()">Delete</button>
   </div>
 </template>
 <script>
@@ -28,6 +28,16 @@ export default {
       console.log(response.data);
       this.user = response.data;
     });
+  },
+  methods: {
+    deleteUser: function() {
+      if (confirm("Are you sure you want to delete this user?")) {
+        axios.delete(`/api/users/${this.user.id}`).then((response) => {
+          console.log("success", response.data);
+          this.$router.push("/Logout");
+        });
+      }
+    },
   },
 };
 </script>

@@ -1,13 +1,25 @@
 <template>
   <div class="teams">
     <h1>All Teams</h1>
+    <!-- <h4>click on a team for more information</h4> -->
 
     <!-- <p>{{ teams }}</p> -->
-
+    <h4>NFL</h4>
     <div v-for="team in teams">
-      <h3>Team: {{ team.name }}</h3>
-      <p>League: {{ team.league }}</p>
-      <p></p>
+      <div v-if="team.league == 'NFL'">
+        <router-link tag="p" :to="`/teams/${team.id}`"
+          >{{ team.name }}
+        </router-link>
+      </div>
+    </div>
+    <br />
+    <h4>NBA</h4>
+    <div v-for="team in teams">
+      <div v-if="team.league == 'NBA'">
+        <router-link tag="p" :to="`/teams/${team.id}`"
+          >{{ team.name }}
+        </router-link>
+      </div>
     </div>
   </div>
 </template>

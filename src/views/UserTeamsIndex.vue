@@ -5,7 +5,10 @@
     <p>{{ team_hash }}</p> -->
 
     <div v-for="team in team_hash">
-      <h2>TEAM: {{ team.name }}</h2>
+      <!-- <h2>{{ team.name }}</h2> -->
+      <router-link tag="h3" :to="`/teams/${team.id}`"
+        >{{ team.name }}
+      </router-link>
       <p>LOGO:</p>
       <p>LEAGUE: {{ team.league }}</p>
       <!-- <p>{{ team.schedule[1].broadcast }}</p> -->
@@ -21,6 +24,7 @@
 </template>
 <script>
 import axios from "axios";
+import moment from "moment";
 
 export default {
   data: function() {
@@ -34,6 +38,11 @@ export default {
       this.team_hash = response.data;
       console.log(response.data[0]["name"]);
     });
+  },
+  methods: {
+    relativeDate: function(date) {
+      return moment().format("MMMM Do YYYY, h:mm:ss a");
+    },
   },
 };
 </script>

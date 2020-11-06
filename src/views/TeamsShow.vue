@@ -39,7 +39,7 @@ export default {
     };
   },
   created: function() {
-    axios.get("/api/teams/9").then((response) => {
+    axios.get(`/api/teams/${this.$route.params.id}`).then((response) => {
       console.log(response.data);
       this.team = response.data;
     });

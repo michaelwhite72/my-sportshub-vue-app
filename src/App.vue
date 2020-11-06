@@ -2,12 +2,12 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link v-if="!isLoggedIn()" to="/Login">Login |</router-link>
+      <router-link v-if="!isLoggedIn()" to="/Login">Login </router-link>
       <!-- <router-link v-if="!isLoggedIn()" to="/Signup">New User</router-link> | -->
       <!-- <router-link v-if="!isLoggedIn()" to="/Login">Login</router-link> | -->
-      <router-link to="/user_teams">User Teams</router-link> |
+      <router-link v-if="isLoggedIn()" to="/user_teams">My Teams</router-link> |
       <router-link to="/teams">All Teams</router-link> |
-      <router-link to="/teams/:id">Show Team</router-link> |
+      <!-- <router-link to="/teams/:id">Show Team</router-link> | -->
       <router-link v-if="isLoggedIn()" to="/users/:id">User Info |</router-link>
       <!-- <router-link to="/users/:id/edit">edit User</router-link> | -->
       <router-link v-if="isLoggedIn()" to="/Logout"> Logout</router-link>
