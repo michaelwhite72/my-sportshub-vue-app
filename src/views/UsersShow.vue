@@ -8,7 +8,9 @@
     <div v-for="team in user.teams">
       <p>{{ team.name }}</p>
     </div>
-    <button v-on:click="UpdateUser()">Update</button>
+    <router-link :to="`/users/${user.id}/edit`">
+      <button>Update</button></router-link
+    >
     <button v-on:click="DeleteUser()">Delete</button>
   </div>
 </template>

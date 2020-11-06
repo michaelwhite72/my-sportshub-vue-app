@@ -8,6 +8,7 @@ import UserTeamsIndex from "../views/UserTeamsIndex.vue";
 import TeamsIndex from "../views/TeamsIndex.vue";
 import TeamsShow from "../views/TeamsShow.vue";
 import UsersShow from "../views/UsersShow.vue";
+import UsersEdit from "../views/UsersEdit.vue";
 
 Vue.use(VueRouter)
 
@@ -51,6 +52,11 @@ const routes = [
     path: '/users/:id',
     name: 'users-show',
     component: UsersShow
+  },
+  {
+    path: '/users/:id/edit',
+    name: 'users-edit',
+    component: UsersEdit
   },
   // {
   //   path: '/about',

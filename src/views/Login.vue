@@ -14,6 +14,7 @@
         <input type="password" class="form-control" v-model="password" />
       </div>
       <input type="submit" class="btn btn-primary" value="Submit" />
+      <router-link to="/Signup"> <button>New User</button></router-link>
     </form>
   </div>
 </template>
