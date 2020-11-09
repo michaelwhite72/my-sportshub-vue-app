@@ -23,7 +23,8 @@
       <h6>{{ article.source_name }}</h6>
       <img :src="article.url_image" alt="" />
       <h4>description: {{ article.description }}</h4>
-      <h5>Article Link: {{ article.url }}</h5>
+      <a :href="`${article.url}`" target="_blank">{{ article.url }}</a>
+
       <p></p>
       <br />
     </div>

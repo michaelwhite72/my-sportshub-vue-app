@@ -9,15 +9,17 @@
       <router-link tag="h3" :to="`/teams/${team.id}`"
         >{{ team.name }}
       </router-link>
+      <img :src="team.logo" alt="" />
       <p>LOGO:</p>
       <p>LEAGUE: {{ team.league }}</p>
       <!-- <p>{{ team.schedule[1].broadcast }}</p> -->
       <div v-for="schedule in team.schedule">
-        <p>Week: {{ schedule.week }}</p>
-        <p>Game Time: {{ schedule.start_time }}</p>
+        <h4>Week: {{ schedule.week }}</h4>
+        <p>Game Time: {{ relativeDate(schedule.start_time) }}</p>
         <p>Home Team: {{ schedule.home_team }}</p>
         <p>Away Team: {{ schedule.away_team }}</p>
         <p>Broadcast: {{ schedule.broadcast }}</p>
+        <p>___________________________________</p>
       </div>
     </div>
   </div>
@@ -41,7 +43,7 @@ export default {
   },
   methods: {
     relativeDate: function(date) {
-      return moment().format("MMMM Do YYYY, h:mm:ss a");
+      return moment(date).format("MMMM Do YYYY, h:mm:ss a");
     },
   },
 };

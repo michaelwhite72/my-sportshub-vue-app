@@ -10,6 +10,9 @@
         <router-link tag="p" :to="`/teams/${team.id}`"
           >{{ team.name }}
         </router-link>
+        <!-- SHows the team name as a Hyperlink - Check view when them included        
+        <a :href="`/teams/${team.id}`">{{ team.name }}</a> 
+        -->
       </div>
     </div>
     <br />
