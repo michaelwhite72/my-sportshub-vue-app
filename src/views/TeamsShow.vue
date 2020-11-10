@@ -2,6 +2,22 @@
   <div class="teams-show">
     <!-- <h1>Show Team</h1> -->
 
+    <!-- Dropdown select example -->
+    <!-- <select class="form-control" @change="getTeamSeason($event)">
+      <option value="" selected disabled>Choose Season</option>
+      <option
+        v-for="season in seasons"
+        :value="jobTitle.id"
+        :key="jobTitle.id"
+        >{{ jobTitle.name }}</option
+      >
+    </select> -->
+    <!-- <br /><br />
+    <p>
+      <span>Selected job title: {{ selectedJobTitle }}</span>
+    </p> -->
+    <!-- Dropdown select example -->
+
     <h1>{{ team.name }}</h1>
     <img :src="team.official_logo" alt="" />
 
@@ -37,13 +53,64 @@ export default {
   data: function() {
     return {
       team: {},
+      selectedSeason: "latest",
+      jobTitles: [
+        { name: "Current" },
+        { name: "2019-2020-regular" },
+        { name: "2019-2020-Playoffs" },
+        { name: "2018-2019-regular" },
+      ],
     };
   },
   created: function() {
-    axios.get(`/api/teams/${this.$route.params.id}`).then((response) => {
-      console.log(response.data);
-      this.team = response.data;
-    });
+    // axios.get(`/api/teams/${this.$route.params.id}`).then((response) => {
+    //   console.log(response.data);
+    //   this.team = response.data;
+    // });
+    this.getTeamSeason();
+  },
+  methods: {
+    getTeamSeason: function() {
+      axios
+        .get(`/api/teams/${this.$route.params.id}`, {
+          params: {
+            season: this.selectedSeason,
+          },
+        })
+        .then((response) => {
+          console.log(response.data);
+          this.team = response.data;
+        });
+    },
   },
 };
 </script>
+
+----->Example for Season Select below <--------
+
+<div id="app">
+  <select class="form-control" @change="changeJobTitle($event)">
+    <option value="" selected disabled>Choose</option>
+    <option v-for="jobTitle in jobTitles" :value="jobTitle.id" :key="jobTitle.id">{{ jobTitle.name }}</option>
+  </select>
+  <br><br>
+  <p><span>Selected job title: {{ selectedJobTitle  }}</span></p>
+</div>
+
+new Vue({ el: "#app", data: { jobTitles: [ { name: "Product designer", id: 1 },
+{ name: "Full-stack developer", id: 2 }, { name: "Product manager", id: 3 }, {
+name: "Senior front-end developer", id: 4 } ], selectedJobTitle: null },
+methods: { changeJobTitle (event) { this.selectedJobTitle =
+event.target.options[event.target.options.selectedIndex].text } } }) ----> end
+of season else method example <-------
+
+<label for="seasonView">Choose a season:</label>
+
+<select name="seasonView" id="seasonView">
+      <option value="latest">Latest</option>
+      <option value="current">Current</option>
+      <option value="2019-2020-regular">2019-2020-regular</option>
+      <option value="2019-2020-playoffs">2019-2020-playoffs</option>
+      <option value="2018-2019-regular">2019-2020-regular</option>
+      <option value="2018-2019-playoffs">2019-2020-regular</option>
+    </select>

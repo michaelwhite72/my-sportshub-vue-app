@@ -1,6 +1,7 @@
 <template>
   <div class="teams">
     <h1>All Teams</h1>
+    {{ nfl }}
     <!-- <h4>click on a team for more information</h4> -->
     <h4>NFL</h4>
     <div v-for="team in teams">
@@ -23,11 +24,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-  </div>
 </template>
 <script>
 import axios from "axios";
@@ -48,11 +44,11 @@ export default {
       console.log(response.data);
       this.teams = response.data;
       // test functionality (11/10)
-      // this.nfl = this.teams.map((team) => {
-      //   if (team.league == "NFL") {
-      //     team.name;
-      //   }
-      // });
+      this.nfl = response.data.map((team) => {
+        if (team.league === "NFL") {
+          return team.name;
+        }
+      });
       // end test (11/10)
     });
   },

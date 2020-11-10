@@ -4,6 +4,17 @@
     <!-- 
     <p>{{ team_hash }}</p> -->
 
+    <!-- Dropdown select example -->
+    <!-- <label for="cars">Choose a car:</label>
+
+      <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select> -->
+    <!-- Dropdown select example -->
+
     <div v-for="team in team_hash">
       <!-- <h2>{{ team.name }}</h2> -->
       <router-link tag="h3" :to="`/teams/${team.id}`"
@@ -21,19 +32,23 @@
         <p>Broadcast: {{ schedule.broadcast }}</p>
         <p>___________________________________</p>
       </div>
+      <h3>_____________________Next________________________</h3>
     </div>
   </div>
 </template>
 <script>
 import axios from "axios";
 import moment from "moment";
+import Vue2Filters from "vue2-filters";
 
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function() {
     return {
       team_hash: [],
     };
   },
+
   created: function() {
     axios.get("/api/user_teams").then((response) => {
       console.log(response.data);

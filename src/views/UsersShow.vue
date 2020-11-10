@@ -1,7 +1,7 @@
 <template>
   <div class="users-show">
     <h1>User Information</h1>
-    {{ user.id }}
+
     <h3>Name: {{ user.name }}</h3>
     <h3>Email: {{ user.email }}</h3>
     <h4>Favorite Teams</h4>

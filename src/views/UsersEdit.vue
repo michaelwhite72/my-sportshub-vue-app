@@ -88,7 +88,7 @@ export default {
         // password: this.password,
         // password_confirmation: this.passwordConfirmation,
         // old_password: this.oldPassword,
-        // team_ids: this.checkedTeams,
+        team_ids: this.checkedTeams,
       };
       axios
         .patch(`/api/users/${this.$parent.getUserId()}`, params)
