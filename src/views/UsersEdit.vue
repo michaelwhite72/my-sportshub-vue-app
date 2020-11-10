@@ -14,10 +14,20 @@
         <input type="email" class="form-control" v-model="user.email" />
       </div>
 
-      <div class="form-group" v-for="team in user.teams">
-        <label>{{ team.name }}</label>
-        <input type="checkbox" class="form-control" v-model="team.name" />
+      <div v-for="team in teams">
+        <input
+          type="checkbox"
+          :id="team.id"
+          :value="team.id"
+          v-model="checkedTeams"
+        />
+        <label :for="team.id">{{ team.name }}</label>
+        <!-- <p>{{ team.name }}</p> -->
       </div>
+      <br />
+      <!-- Test Code: Hide the list below for production -->
+      <span>Checked names: {{ checkedTeams }}</span
+      ><br />
 
       <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
@@ -54,14 +64,20 @@ export default {
       // password: "",
       // passwordConfirmation: "",
       // oldPassword: "",
-      // team_ids: [],
       errors: [],
+      teams: [],
+      checkedTeams: [],
     };
   },
   created: function() {
     axios.get(`/api/users/${this.$parent.getUserId()}`).then((response) => {
       console.log(response.data);
       this.user = response.data;
+      this.checkedTeams = this.user.teams.map((team) => team.id);
+    });
+    axios.get("/api/teams").then((response) => {
+      this.teams = response.data;
+      console.log(response.data);
     });
   },
   methods: {
@@ -72,7 +88,7 @@ export default {
         // password: this.password,
         // password_confirmation: this.passwordConfirmation,
         // old_password: this.oldPassword,
-        // team_ids: this.teams,
+        // team_ids: this.checkedTeams,
       };
       axios
         .patch(`/api/users/${this.$parent.getUserId()}`, params)

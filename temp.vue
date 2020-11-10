@@ -1,7 +1,33 @@
-<template>
+// tmeplate
+// --->test code below
+  <div class="temp">
+    <!--break  -->
+    <div v-for="team in teams">
+      <div v-if="team.league == 'NFL'">
+        <h4>NFL</h4>
+        <div v-if="team.league == 'NFL'">
+        <router-link tag="p" :to="`/teams/${team.id}`"
+          >{{ team.name }}
+        </router-link>
+      </div>
+      <br>
+    <div v-if="team.league == 'NBA'"> 
+       <h4>NBA</h4>
+        <router-link tag="p" :to="`/teams/${team.id}`"
+          >{{ team.name }}
+        </router-link>
+    </div>
+    <br />
+    <!--break  -->
+  </div>
+</template>
+
+//  ---> teams index loop below (need ot make dry, saved here for reference)
   <div class="teams">
     <h1>All Teams</h1>
     <!-- <h4>click on a team for more information</h4> -->
+
+    <!-- <p>{{ teams }}</p> -->
     <h4>NFL</h4>
     <div v-for="team in teams">
       <div v-if="team.league == 'NFL'">
@@ -23,38 +49,3 @@
       </div>
     </div>
   </div>
-
-
-
-
-  </div>
-</template>
-<script>
-import axios from "axios";
-
-export default {
-  data: function() {
-    return {
-      teams: [],
-      nfl: ["dallas"],
-      nba: [],
-      mlb: [],
-      nhl: [],
-      ncaaf: [],
-    };
-  },
-  created: function() {
-    axios.get("/api/teams").then((response) => {
-      console.log(response.data);
-      this.teams = response.data;
-      // test functionality (11/10)
-      // this.nfl = this.teams.map((team) => {
-      //   if (team.league == "NFL") {
-      //     team.name;
-      //   }
-      // });
-      // end test (11/10)
-    });
-  },
-};
-</script>
