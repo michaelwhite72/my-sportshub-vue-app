@@ -24,7 +24,7 @@ export default {
     };
   },
   created: function() {
-    axios.get(`/api/users/${this.$parent.getUserId()}`).then((response) => {
+    axios.get("/api/users/id").then((response) => {
       console.log(response.data);
       this.user = response.data;
     });
@@ -41,3 +41,5 @@ export default {
   },
 };
 </script>
+
+// `/api/users/${this.$parent.getUserId()}`
