@@ -4,17 +4,6 @@
     <!-- 
     <p>{{ team_hash }}</p> -->
 
-    <!-- Dropdown select example -->
-    <!-- <label for="cars">Choose a car:</label>
-
-      <select name="cars" id="cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select> -->
-    <!-- Dropdown select example -->
-
     <div v-for="team in team_hash">
       <!-- <h2>{{ team.name }}</h2> -->
       <router-link tag="h3" :to="`/teams/${team.id}`"
@@ -63,3 +52,14 @@ export default {
   },
 };
 </script>
+
+<!-- Dropdown select example -->
+<!-- <label for="cars">Choose a car:</label>
+
+      <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select> -->
+<!-- Dropdown select example -->

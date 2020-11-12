@@ -27,7 +27,7 @@
       </div>
       <div class="form-group">
         <h3>Teams:</h3>
-        <!-- <input type="text" class="form-control" v-model="teams" /> -->
+        <!-- Teams checkbox Method below -->
       </div>
       <div v-for="team in teams">
         <input
@@ -37,19 +37,14 @@
           v-model="checkedTeams"
         />
         <label :for="team.id">{{ team.name }}</label>
-        <!-- <p>{{ team.name }}</p> -->
       </div>
       <br />
+      <!-- End team Checkbox method -->
 
-      <!-- <input type="checkbox" id="jack" value="Jack" v-model="checkedNames" />
-      <label for="jack">Jack</label>
-      <input type="checkbox" id="john" value="John" v-model="checkedNames" />
-      <label for="john">John</label>
-      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames" />
-      <label for="mike">Mike</label>
-      <br /> -->
-      <span>Checked names: {{ checkedTeams }}</span
+      <!-- Sanity Check below, verify correct teams are being selected above.  Remove from final release -->
+      <span>Checked Teams: {{ checkedTeams }}</span
       ><br />
+      <!-- Sanity Check end -->
 
       <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
@@ -66,7 +61,6 @@ export default {
       email: "",
       password: "",
       passwordConfirmation: "",
-      // team_ids: [],
       errors: [],
       teams: [],
       checkedTeams: [],

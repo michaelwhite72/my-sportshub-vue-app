@@ -13,6 +13,9 @@
         <label>Email:</label>
         <input type="email" class="form-control" v-model="user.email" />
       </div>
+      <!-- Create a submit button for username and email change -->
+      <!-- <input type="submit" class="btn btn-primary" value="Submit" /> -->
+      <br />
 
       <div v-for="team in teams">
         <input
@@ -28,11 +31,14 @@
       <!-- Test Code: Hide the list below for production -->
       <span>Checked names: {{ checkedTeams }}</span
       ><br />
-
+      <!-- Look at submit button team changes only -->
       <input type="submit" class="btn btn-primary" value="Submit" />
+      <router-link :to="`/users/${user.id}`">
+        <button>Cancel</button></router-link
+      >
     </form>
     <br />
-
+    <!-- Adding password change back to form once I decide the way i want it implemented.  Dont want to create new teams just for password. -->
     <!-- <div class="form-group">
       <label>Password:</label>
       <input type="password" class="form-control" v-model="password" />
@@ -49,6 +55,7 @@
       <label>Old Password:</label>
       <input type="password" class="form-control" v-model="oldPassword" />
     </div> -->
+    <!-- End of Password change -->
   </div>
 </template>
 
