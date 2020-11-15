@@ -1,5 +1,6 @@
 <template>
   <div class="teams-show">
+    <!-- From Category 3 page -->
     <!-- Breadcrumb Area -->
     <section class="breadcrumb-area">
       <div class="container">

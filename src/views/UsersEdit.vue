@@ -77,7 +77,7 @@ export default {
     };
   },
   created: function() {
-    axios.get("/api/users/id").then((response) => {
+    axios.get(`/api/users/${this.$parent.getUserId()}`).then((response) => {
       console.log(response.data);
       this.user = response.data;
       this.checkedTeams = this.user.teams.map((team) => team.id);
@@ -98,7 +98,7 @@ export default {
         team_ids: this.checkedTeams,
       };
       axios
-        .patch("/api/users/id", params)
+        .patch(`/api/teams/${this.$parent.getUserId()}`, params)
         .then((response) => {
           this.$router.push("/users/:id");
         })
@@ -109,3 +109,4 @@ export default {
   },
 };
 </script>
+`/api/teams/${this.$route.params.id}`

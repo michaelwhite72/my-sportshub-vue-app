@@ -8,15 +8,15 @@
             <div class="bar-left">
               <ul class="list-unstyled list-inline">
                 <li class="list-inline-item">
-                  <i class="fa fa-calendar"></i>Sunday, Feb 11, 2019
+                  <i class="fa fa-calendar"></i>{{ Date() }}
                 </li>
                 <li class="list-inline-item">
-                  <i class="fa fa-cloud"></i>New York, 19°C
+                  <i class="fa fa-cloud"></i>Kyle, TX, 76°F
                 </li>
-                <li class="list-inline-item"><a href="">Advertise</a></li>
+                <!-- <li class="list-inline-item"><a href="">Advertise</a></li>
                 <li class="list-inline-item"><a href="">Write Us</a></li>
                 <li class="list-inline-item"><a href="">About</a></li>
-                <li class="list-inline-item"><a href="">Contact</a></li>
+                <li class="list-inline-item"><a href="">Contact</a></li> -->
               </ul>
             </div>
           </div>
@@ -73,6 +73,11 @@
                 <li v-if="isLoggedIn()" class="list-inline-item">
                   <router-link to="/Logout"> Logout</router-link>
                 </li>
+                <li v-if="isLoggedIn()" class="list-inline-item">
+                  <router-link :to="`/users/${getUserId()}`">
+                    Show User Info</router-link
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -92,46 +97,32 @@
           <div class="col-md-12">
             <div class="mobile-menu">
               <nav id="dropdown">
-                <a href=""><img src="images/f-logo.png" alt=""/></a>
+                <a href=""><img src="" alt=""/></a>
                 <ul class="list-unstyled">
+                  <li></li>
                   <li>
-                    <a>Home</a>
-                    <ul class="list-unstyled">
-                      <li><a href="index.html">Home Style 1</a></li>
-                      <li><a href="02-home-two.html">Home Style 2</a></li>
-                      <li><a href="03-home-three.html">Home Style 3</a></li>
-                    </ul>
+                    <router-link to="/">Home</router-link>
+                  </li>
+                  <li v-if="isLoggedIn()">
+                    <router-link to="/user_teams">My Teams</router-link>
                   </li>
                   <li>
-                    <a>Pages</a>
-                    <ul class="list-unstyled">
-                      <li><a href="04-about-us.html">About Us</a></li>
-                      <li>
-                        <a href="05-category-one.html">Category Style 1</a>
-                      </li>
-                      <li>
-                        <a href="06-category-two.html">Category Style 2</a>
-                      </li>
-                      <li>
-                        <a href="07-category-three.html">Category Style 3</a>
-                      </li>
-                      <li>
-                        <a href="08-category-four.html">Category Style 4</a>
-                      </li>
-                      <li>
-                        <a href="09-news-details-one.html">Single News 1</a>
-                      </li>
-                      <li>
-                        <a href="10-news-details-two.html">Single News 2</a>
-                      </li>
-                      <li><a href="12-faq.html">Faq</a></li>
-                      <li><a href="11-contact.html">Contact</a></li>
-                      <li><a href="13-404.html">404</a></li>
-                    </ul>
+                    <router-link to="/teams">All Teams</router-link>
                   </li>
-                  <li><a href="#">Politics</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Sports</a></li>
+                  <li v-if="!isLoggedIn()">
+                    <router-link to="/Login">Login </router-link>
+                  </li>
+                  <li v-if="!isLoggedIn()">
+                    <router-link to="/Signup">New User</router-link>
+                  </li>
+                  <li v-if="isLoggedIn()">
+                    <router-link to="/Logout"> Logout</router-link>
+                  </li>
+                  <li v-if="isLoggedIn()">
+                    <router-link :to="`/users/${getUserId()}`">
+                      Show User Info</router-link
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -290,7 +281,12 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
+  data: function() {
+    return {};
+  },
   methods: {
     isLoggedIn: function() {
       return localStorage.getItem("jwt");
