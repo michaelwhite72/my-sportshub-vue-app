@@ -55,11 +55,11 @@
           <div class="col-md-9">
             <div class="main-menu">
               <ul class="list-unstyled list-inline">
-                <li class="list-inline-item">
+                <!-- <li class="list-inline-item">
                   <router-link to="/">Home</router-link>
-                </li>
+                </li> -->
                 <li v-if="isLoggedIn()" class="list-inline-item">
-                  <router-link to="/user_teams">My Teams</router-link>
+                  <router-link to="/user_teams">Home</router-link>
                 </li>
                 <li class="list-inline-item">
                   <router-link to="/teams">All Teams</router-link>
@@ -71,12 +71,12 @@
                   <router-link to="/Signup">New User</router-link>
                 </li>
                 <li v-if="isLoggedIn()" class="list-inline-item">
-                  <router-link to="/Logout"> Logout</router-link>
-                </li>
-                <li v-if="isLoggedIn()" class="list-inline-item">
                   <router-link :to="`/users/${getUserId()}`">
                     Show User Info</router-link
                   >
+                </li>
+                <li v-if="isLoggedIn()" class="list-inline-item">
+                  <router-link to="/Logout"> Logout</router-link>
                 </li>
               </ul>
             </div>
