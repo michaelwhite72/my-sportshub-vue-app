@@ -66,6 +66,15 @@
                                       HOME GAME
                                     </li>
                                   </div>
+                                  <div
+                                    v-if="
+                                      team.api_id === scheduleItem.away_team
+                                    "
+                                  >
+                                    <li class="list-inline-item">
+                                      AWAY GAME
+                                    </li>
+                                  </div>
                                 </ul>
                                 <p>Home Team: {{ scheduleItem.home_team }}</p>
                                 <p>Away Team: {{ scheduleItem.away_team }}</p>

@@ -4,11 +4,12 @@
     <section class="contact-area">
       <div class="container">
         <div class="row">
-          <div class="col-md-7">
+          <div class="col-lg-12">
             <div class="get-in-touch">
               <div class="sec-title">
                 <h5>EDIT INFORMATION</h5>
               </div>
+              <!-- Edit Name & Email -->
               <div class="contact-form">
                 <form id="ajax-contact" method="post" action="send.php">
                   <div class="row">
@@ -38,60 +39,9 @@
                         <!-- Create a submit button for username and email change -->
                         <!-- <input type="submit" class="btn btn-primary" value="Submit" /> -->
                         <br />
-                        <h4>NFL</h4>
-                        <div v-for="team in teams">
-                          <div v-if="team.league == 'NFL'">
-                            <input
-                              type="checkbox"
-                              :id="team.id"
-                              :value="team.id"
-                              v-model="checkedTeams"
-                            />
-                            <label :for="team.id">{{ team.name }}</label>
-                          </div>
-                        </div>
-                        <br />
-                        <h4>NBA</h4>
-                        <div v-for="team in teams">
-                          <div v-if="team.league == 'NBA'">
-                            <input
-                              type="checkbox"
-                              :id="team.id"
-                              :value="team.id"
-                              v-model="checkedTeams"
-                            />
-                            <label :for="team.id">{{ team.name }}</label>
-                          </div>
-                        </div>
-                        <br />
-                        <h4>MLB</h4>
-                        <div v-for="team in teams">
-                          <div v-if="team.league == 'MLB'">
-                            <input
-                              type="checkbox"
-                              :id="team.id"
-                              :value="team.id"
-                              v-model="checkedTeams"
-                            />
-                            <label :for="team.id">{{ team.name }}</label>
-                          </div>
-                        </div>
-                        <br />
-                        <h4>NHL</h4>
-                        <div v-for="team in teams">
-                          <div v-if="team.league == 'NHL'">
-                            <input
-                              type="checkbox"
-                              :id="team.id"
-                              :value="team.id"
-                              v-model="checkedTeams"
-                            />
-                            <label :for="team.id">{{ team.name }}</label>
-                          </div>
-                        </div>
+
                         <!-- Test Code: Hide the list below for production -->
-                        <span>Checked names: {{ checkedTeams }}</span
-                        ><br />
+
                         <!-- Look at submit button team changes only -->
                         <input
                           type="submit"
@@ -103,62 +53,156 @@
                         >
                       </form>
                     </div>
-                    <div class="col-md-6"></div>
-                    <div class="col-md-12"></div>
-                    <div class="col-md-12"></div>
                   </div>
                   <div id="form-messages"></div>
                 </form>
               </div>
+              <!-- Edit Name/Email end -->
             </div>
           </div>
           <!-- EDIT INFO END -->
-          <!-- CONTACT INFO BLOCK - TEAM SELECT -->
-
-          <div class="col-md-5">
-            <div class="contact-info">
-              <!-- <div class="sec-title">
-                <h5>Contact Info</h5>
-              </div> -->
-
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="contact-box d-flex">
-                    <div class="contact-content">
-                      <img
-                        src="https://images.unsplash.com/photo-1590372447928-33080a2b401a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                        alt=""
-                        class="img-fluid"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="contact-box d-flex"></div>
-                </div>
-                <div class="col-md-12">
-                  <div class="contact-box d-flex">
-                    <img
-                      src="https://images.unsplash.com/photo-1568377304536-1799f397d261?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                      alt=""
-                      class="img-fluid"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="social"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- CONTACT INFO - TEAM SELECT END -->
         </div>
       </div>
-      <div id="map"></div>
     </section>
     <!-- End Contact Area -->
 
     <br />
+
+    <!-- League/Team Select -->
+    <section class="news-area2">
+      <div class="container">
+        <div class="row">
+          <!-- NFL -->
+          <div class="col-lg-3 col-md-0">
+            <div class="int-news">
+              <div class="sec-title">
+                <h5>NFL</h5>
+              </div>
+              <div>
+                <div class="int-item">
+                  <div class="int-lg">
+                    <img src="" alt="" class="img-fluid" />
+                    <div class="int-layer"></div>
+                  </div>
+                  <div class="int-list d-flex" v-for="team in teams">
+                    <div class="int-img"></div>
+                    <div class="img-content">
+                      <div v-if="team.league == 'NFL'">
+                        <input
+                          type="checkbox"
+                          :id="team.id"
+                          :value="team.id"
+                          v-model="checkedTeams"
+                        />
+                        <label :for="team.id">{{ team.name }} </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- NFL end -->
+          <!-- NBA -->
+          <div class="col-lg-3 col-md-0">
+            <div class="int-news">
+              <div class="sec-title">
+                <h5>NBA</h5>
+              </div>
+              <div>
+                <div class="int-item">
+                  <div class="int-lg">
+                    <img src="" alt="" class="img-fluid" />
+                    <div class="int-layer"></div>
+                  </div>
+                  <div class="int-list d-flex" v-for="team in teams">
+                    <div class="int-img"></div>
+                    <div class="img-content">
+                      <div v-if="team.league == 'NBA'">
+                        <input
+                          type="checkbox"
+                          :id="team.id"
+                          :value="team.id"
+                          v-model="checkedTeams"
+                        />
+                        <label :for="team.id">{{ team.name }} </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- NBA end -->
+          <!-- NHL -->
+          <div class="col-lg-3 col-md-0">
+            <div class="int-news">
+              <div class="sec-title">
+                <h5>NHL</h5>
+              </div>
+              <div>
+                <div class="int-item">
+                  <div class="int-lg">
+                    <img src="" alt="" class="img-fluid" />
+                    <div class="int-layer"></div>
+                  </div>
+                  <div class="int-list d-flex" v-for="team in teams">
+                    <div class="int-img"></div>
+                    <div class="img-content">
+                      <div v-if="team.league == 'NHL'">
+                        <input
+                          type="checkbox"
+                          :id="team.id"
+                          :value="team.id"
+                          v-model="checkedTeams"
+                        />
+                        <label :for="team.id">{{ team.name }} </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- NHL End -->
+          <!-- MLB -->
+          <div class="col-lg-3 col-md-0">
+            <div class="int-news">
+              <div class="sec-title">
+                <h5>MLB</h5>
+              </div>
+              <div>
+                <div class="int-item">
+                  <div class="int-lg">
+                    <img src="" alt="" class="img-fluid" />
+                    <div class="int-layer"></div>
+                  </div>
+                  <div class="int-list d-flex" v-for="team in teams">
+                    <div class="int-img"></div>
+                    <div class="img-content">
+                      <div v-if="team.league == 'MLB'">
+                        <input
+                          type="checkbox"
+                          :id="team.id"
+                          :value="team.id"
+                          v-model="checkedTeams"
+                        />
+                        <label :for="team.id">{{ team.name }} </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- MLB End -->
+        </div>
+        <span>Checked names: {{ checkedTeams }}</span>
+        <br />
+      </div>
+    </section>
+    <!-- End League/Team Select -->
+
     <!-- Adding password change back to form once I decide the way i want it implemented.  Dont want to create new teams just for password. -->
     <!-- <div class="form-group">
       <label>Password:</label>
