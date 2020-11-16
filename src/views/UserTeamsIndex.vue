@@ -55,11 +55,17 @@
                               <div class="img-content">
                                 <ul class="list-unstyled list-inline">
                                   <li class="list-inline-item">
-                                    WEEK {{ scheduleItem.week }}
-                                  </li>
-                                  <li class="list-inline-item">
                                     {{ relativeDate(scheduleItem.start_time) }}
                                   </li>
+                                  <div
+                                    v-if="
+                                      team.api_id === scheduleItem.home_team
+                                    "
+                                  >
+                                    <li class="list-inline-item">
+                                      HOME GAME
+                                    </li>
+                                  </div>
                                 </ul>
                                 <p>Home Team: {{ scheduleItem.home_team }}</p>
                                 <p>Away Team: {{ scheduleItem.away_team }}</p>
