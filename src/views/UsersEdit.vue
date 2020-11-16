@@ -116,27 +116,40 @@
           <!-- CONTACT INFO BLOCK - TEAM SELECT -->
 
           <div class="col-md-5">
-            <!-- <div class="col-lg-6 col-md-12"> -->
-            <div class="about-img">
-              <img
-                src="https://images.unsplash.com/photo-1475440197469-e367ec8eeb19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                alt=""
-                class="img-fluid"
-              />
-            </div>
-            <!-- Second Image ??? -->
-            <!-- <div class="contact-info">
-              <div class="sec-title">
-                <h5></h5>
-                <div class="about-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1485400031595-976c74cf4e25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                    alt=""
-                    class="img-fluid"
-                  />
+            <div class="contact-info">
+              <!-- <div class="sec-title">
+                <h5>Contact Info</h5>
+              </div> -->
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="contact-box d-flex">
+                    <div class="contact-content">
+                      <img
+                        src="https://images.unsplash.com/photo-1590372447928-33080a2b401a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="contact-box d-flex"></div>
+                </div>
+                <div class="col-md-12">
+                  <div class="contact-box d-flex">
+                    <img
+                      src="https://images.unsplash.com/photo-1568377304536-1799f397d261?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="social"></div>
                 </div>
               </div>
-            </div> -->
+            </div>
           </div>
           <!-- CONTACT INFO - TEAM SELECT END -->
         </div>
@@ -145,43 +158,6 @@
     </section>
     <!-- End Contact Area -->
 
-    <form v-on:submit.prevent="submit()">
-      <h1>Update User Information</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
-      <div class="form-group">
-        <label>Name:</label>
-        <input type="text" class="form-control" v-model="user.name" />
-      </div>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="user.email" />
-      </div>
-      <!-- Create a submit button for username and email change -->
-      <!-- <input type="submit" class="btn btn-primary" value="Submit" /> -->
-      <br />
-
-      <div v-for="team in teams">
-        <input
-          type="checkbox"
-          :id="team.id"
-          :value="team.id"
-          v-model="checkedTeams"
-        />
-        <label :for="team.id">{{ team.name }}</label>
-        <!-- <p>{{ team.name }}</p> -->
-      </div>
-      <br />
-      <!-- Test Code: Hide the list below for production -->
-      <span>Checked names: {{ checkedTeams }}</span
-      ><br />
-      <!-- Look at submit button team changes only -->
-      <input type="submit" class="btn btn-primary" value="Submit" />
-      <router-link :to="`/users/${user.id}`">
-        <button>Cancel</button></router-link
-      >
-    </form>
     <br />
     <!-- Adding password change back to form once I decide the way i want it implemented.  Dont want to create new teams just for password. -->
     <!-- <div class="form-group">
