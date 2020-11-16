@@ -57,7 +57,6 @@
                   <div id="form-messages"></div>
                 </form>
               </div>
-              <!-- Edit Name/Email end -->
             </div>
           </div>
           <!-- EDIT INFO END -->
