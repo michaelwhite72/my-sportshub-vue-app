@@ -33,14 +33,14 @@
               <div class="col-md-12">
                 <div class="category-box-lg">
                   <img :src="team.official_logo" alt="" class="img-fluid" />
-                  <h6>
+                  <h3>
                     <a href="">{{ team.name }}</a>
-                  </h6>
+                  </h3>
                   <ul class="list-unstyled list-inline tag-dat">
                     <li class="list-inline-item">
                       Season: {{ selectedSeason }}
                     </li>
-                    <li class="list-inline-item">February 11, 2019</li>
+                    <li class="list-inline-item"></li>
                   </ul>
                   <p>
                     <!-- Added a NCAAF if loop for future NCAA implementation -->
@@ -74,16 +74,7 @@
                       <h5>Division Rank: {{ team.division_rank }}</h5>
                     </div>
                   </p>
-                  <ul class="list-unstyled list-inline red-com">
-                    <li class="list-inline-item">
-                      <a href="#"
-                        >Read More <i class="fa fa-angle-right"></i
-                      ></a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href=""><i class="fa fa-commenting-o"></i> (09)</a>
-                    </li>
-                  </ul>
+                  
                 </div>
               </div>
 
@@ -105,7 +96,7 @@
                       <li class="list-inline-item">
                         {{ article.source_name }}
                       </li>
-                      <li class="list-inline-item">February 11, 2019</li>
+                      <li class="list-inline-item">{{ relativeDate(article.published) }}</li>
                     </ul>
                     <p>{{ article.description }}</p>
 
@@ -133,6 +124,7 @@
 
 <script>
 import axios from "axios";
+import moment from "moment";
 
 export default {
   data: function() {
@@ -168,6 +160,12 @@ export default {
           console.log(response.data);
           this.team = response.data;
         });
+    },
+    relativeDate: function(date) {
+      return moment(date).calendar();
+    },
+    dateCompare: function(date) {
+      return new Date();
     },
   },
 };

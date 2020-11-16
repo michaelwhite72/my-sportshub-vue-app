@@ -8,7 +8,7 @@
             <div class="bar-left">
               <ul class="list-unstyled list-inline">
                 <li class="list-inline-item">
-                  <i class="fa fa-calendar"></i>{{ Date() }}
+                  <i class="fa fa-calendar"></i>{{ relativeDate(Date()) }}
                 </li>
                 <li class="list-inline-item">
                   <i class="fa fa-cloud"></i>Kyle, TX, 76°F
@@ -137,20 +137,21 @@
     <footer class="footer-area">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="f-about">
-              <img src="images/f-logo.png" alt="" />
+              <img
+                src="https://alcalde.texasexes.org/wp-content/uploads/2013/01/Tower_MarshaMiller.jpg"
+                alt=""
+              />
               <p>
-                Lorem ipsum dolor sit amet, consectet adipisicing elit. Saepe
-                porro neque a nam nulla quos atque.
+                This application was created to provide the average fan a
+                location to view the schedules of their favorite sports team,
+                stats, and latest news in one convenient location.
               </p>
               <ul class="list-unstyled f-contact">
-                <li>
-                  <i class="fa fa-map-marker"></i>795 South Park Avenue, CA
-                  94107
-                </li>
-                <li><i class="fa fa-envelope"></i>enquery@domain.com</li>
-                <li><i class="fa fa-phone"></i>+1 908 875 7678</li>
+                <li><i class="fa fa-map-marker"></i>Kyle, TX 78740</li>
+                <li><i class="fa fa-envelope"></i>mwhite7372@gmail.com</li>
+                <li><i class="fa fa-phone"></i>not available</li>
               </ul>
               <ul class="list-unstyled list-inline f-social">
                 <li class="list-inline-item">
@@ -174,94 +175,63 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="f-service">
               <div class="sec-title">
-                <h5>Services</h5>
+                <h5>Current leagues</h5>
               </div>
               <ul class="list-unstyled service-list">
                 <li>
-                  <a href=""><i class="fa fa-angle-right"></i>Advertisement</a>
+                  <a href="https://www.nfl.com/" target="_blank"
+                    ><i class="fa fa-angle-right"></i>National Football League
+                  </a>
                 </li>
                 <li>
-                  <a href=""><i class="fa fa-angle-right"></i>Work for us</a>
+                  <a href="https://www.nba.com/" target="_blank"
+                    ><i class="fa fa-angle-right"></i>National Basketball League
+                  </a>
                 </li>
                 <li>
-                  <a href=""><i class="fa fa-angle-right"></i>Post a deal</a>
+                  <a href="https://www.nhl.com/" target="_blank"
+                    ><i class="fa fa-angle-right"></i>National Hockey League
+                  </a>
                 </li>
                 <li>
-                  <a href=""><i class="fa fa-angle-right"></i>Agreements</a>
-                </li>
-                <li>
-                  <a href=""
-                    ><i class="fa fa-angle-right"></i>Sms subscription</a
-                  >
-                </li>
-                <li>
-                  <a href=""><i class="fa fa-angle-right"></i>Conference</a>
-                </li>
-                <li>
-                  <a href=""><i class="fa fa-angle-right"></i>Donate us</a>
+                  <a href="https://www.mlb.com/" target="_blank"
+                    ><i class="fa fa-angle-right"></i>Major League Baseball
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="f-post">
+          <div class="col-md-4">
+            <div class="f-service">
               <div class="sec-title">
-                <h5>Latest Post</h5>
+                <h5>Coming Soon</h5>
               </div>
-              <div class="post-box d-flex">
-                <div class="post-img">
-                  <a href=""><img src="images/post1.jpg" alt=""/></a>
-                </div>
-                <div class="post-con">
-                  <p><a href="#">Lorem ipsum dolor sit...</a></p>
-                  <span>Feb 11, 2019</span>
-                </div>
-              </div>
-              <div class="post-box d-flex">
-                <div class="post-img">
-                  <a href=""><img src="images/post2.jpg" alt=""/></a>
-                </div>
-                <div class="post-con">
-                  <p><a href="#">Lorem ipsum dolor sit...</a></p>
-                  <span>Feb 11, 2019</span>
-                </div>
-              </div>
-              <div class="post-box d-flex">
-                <div class="post-img">
-                  <a href=""><img src="images/post3.jpg" alt=""/></a>
-                </div>
-                <div class="post-con">
-                  <p><a href="#">Lorem ipsum dolor sit...</a></p>
-                  <span>Feb 11, 2019</span>
-                </div>
-              </div>
+              <ul class="list-unstyled service-list">
+                <li>
+                  <a
+                    href="https://www.ncaa.com/sports/football/fbs/"
+                    target="_blank"
+                    ><i class="fa fa-angle-right"></i>NCAA Football (FBS)</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.mls.com/" target="_blank"
+                    ><i class="fa fa-angle-right"></i>Major League Soccer
+                    (MLS)</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.premierleague.com/" target="_blank"
+                    ><i class="fa fa-angle-right"></i>Premier League Soccer</a
+                  >
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="f-newsltr">
-              <div class="sec-title">
-                <h5>Newsletter</h5>
-              </div>
-              <form class="news-letter" action="#">
-                <input
-                  type="text"
-                  name="name"
-                  value=""
-                  placeholder="Your name"
-                />
-                <input
-                  type="text"
-                  name="email"
-                  value=""
-                  placeholder="Your email address"
-                />
-                <button type="button" name="button">Register</button>
-              </form>
-            </div>
-          </div>
+
           <div class="col-md-12">
             <div class="f-menu d-flex justify-content-between">
               <a href="">About Us</a>
@@ -293,6 +263,12 @@ export default {
     },
     getUserId: function() {
       return parseInt(localStorage.getItem("user_id"));
+    },
+    relativeDate: function(date) {
+      return moment(date).format("MMMM Do YYYY");
+    },
+    dateCompare: function(date) {
+      return new Date();
     },
   },
 };

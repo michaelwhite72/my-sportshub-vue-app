@@ -65,8 +65,6 @@
     </section>
     <!-- End Contact Area -->
 
-    <br />
-
     <!-- League/Team Select -->
     <section class="news-area2">
       <div class="container">

@@ -28,7 +28,10 @@
                   <div class="sec-title">
                     <br />
                     <h5>
-                      <router-link href="#" :to="`/teams/${team.id}`"
+                      <router-link
+                        href="#"
+                        :src="team.logo"
+                        :to="`/teams/${team.id}`"
                         >{{ team.name }}
                       </router-link>
                       <button
@@ -118,7 +121,7 @@ export default {
   },
   methods: {
     relativeDate: function(date) {
-      return moment(date).format("MMMM Do YYYY, h:mm:ss a");
+      return moment(date).format("llll");
     },
     dateCompare: function(date) {
       return new Date();
