@@ -16,7 +16,7 @@
                     <div class="col-md-6 ">
                       <form v-on:submit.prevent="submit()">
                         <ul>
-                          <li class="text-danger" v-for="error in errors">
+                          <li class="text-warning" v-for="error in errors">
                             {{ error }}
                           </li>
                         </ul>
@@ -36,30 +36,31 @@
                             v-model="user.email"
                           />
                         </div>
-                        <!-- Create a submit button for username and email change -->
-                        <!-- <input type="submit" class="btn btn-primary" value="Submit" /> -->
                         <br />
-
-                        <!-- Test Code: Hide the list below for production -->
-
-                        <!-- Look at submit button team changes only -->
-                        <input
-                          type="submit"
-                          class="btn btn-primary"
-                          value="Submit"
-                        />
-                        <router-link :to="`/users/${user.id}`">
-                          <button>Cancel</button></router-link
-                        >
                       </form>
+                      <section class="about-us">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="about-box">
+                                <a href="#" v-on:click="submit()">SUBMIT</a
+                                >&nbsp;
+                                <a href="#" v-on:click="changePassword()"
+                                  >UPDATE PASSWORD</a
+                                >&nbsp;
+                                <a href="#" v-on:click="cancel()">CANCEL</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
                     </div>
                   </div>
-                  <div id="form-messages"></div>
+                  <!-- <div id="form-messages"></div> -->
                 </form>
               </div>
             </div>
           </div>
-          <!-- EDIT INFO END -->
         </div>
       </div>
     </section>
@@ -201,22 +202,35 @@
     <!-- End League/Team Select -->
 
     <!-- Adding password change back to form once I decide the way i want it implemented.  Dont want to create new teams just for password. -->
-    <!-- <div class="form-group">
-      <label>Password:</label>
-      <input type="password" class="form-control" v-model="password" />
-    </div>
-    <div class="form-group">
-      <label>Password confirmation:</label>
-      <input
-        type="password"
-        class="form-control"
-        v-model="passwordConfirmation"
-      />
-    </div>
-    <div class="form-group">
-      <label>Old Password:</label>
-      <input type="password" class="form-control" v-model="oldPassword" />
-    </div> -->
+    <dialog id="password-change">
+      <form method="dialog">
+        <h2>Password Change</h2>
+
+        <div class="form-group">
+          <label>Old Password:</label>
+          <input type="password" class="form-control" v-model="oldPassword" />
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" class="form-control" v-model="password" />
+        </div>
+        <div class="form-group">
+          <label>Password confirmation:</label>
+          <input
+            type="password"
+            class="form-control"
+            v-model="passwordConfirmation"
+          />
+          <br />
+          <button v-on:click="updatePassword()">
+            Update Password
+          </button>
+          <button>
+            Cancel
+          </button>
+        </div>
+      </form>
+    </dialog>
     <!-- End of Password change -->
   </div>
 </template>
@@ -230,9 +244,9 @@ export default {
       user: {},
       // name: "",
       // email: "",
-      // password: "",
-      // passwordConfirmation: "",
-      // oldPassword: "",
+      password: "",
+      passwordConfirmation: "",
+      oldPassword: "",
       errors: [],
       teams: [],
       checkedTeams: [],
@@ -267,6 +281,16 @@ export default {
         .catch((error) => {
           this.errors = error.response.data.errors;
         });
+    },
+    cancel: function() {
+      this.$router.push(`/users/${this.$parent.getUserId()}`);
+    },
+    changePassword: function() {
+      console.log("Change PW button works");
+      document.querySelector("#password-change").showModal();
+    },
+    updatePassword: function() {
+      console.log("Update Password button works");
     },
   },
 };

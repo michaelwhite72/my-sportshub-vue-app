@@ -19,7 +19,7 @@
               <h3>Email: {{ user.email }}</h3>
               <br />
               <a :href="`/users/${user.id}/edit`">UPDATE</a>
-              <a v-on:click="deleteUser()">DELETE</a>
+              <a href="#" v-on:click="deleteUser()">DELETE</a>
               <br />
               <br />
               <br />

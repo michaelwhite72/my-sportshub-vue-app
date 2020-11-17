@@ -4,7 +4,7 @@
     <section class="slider-area3">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-12 slider-fix">
+          <div class="col-lg-6 col-md-12 ">
             <div class="owl-slider owl-carousel">
               <div class="slider-content">
                 <img
@@ -16,7 +16,7 @@
                   <form v-on:submit.prevent="submit()">
                     <h1>Login</h1>
                     <ul>
-                      <li class="text-danger" v-for="error in errors">
+                      <li class="text-warning" v-for="error in errors">
                         {{ error }}
                       </li>
                     </ul>
@@ -45,14 +45,6 @@
                       <button>New User</button></router-link
                     >
                   </form>
-                </div>
-              </div>
-              <div class="slider-content">
-                <img src="" alt="" class="img-fluid" />
-                <div class="slider-layer">
-                  <p>
-                    <a href=""></a>
-                  </p>
                 </div>
               </div>
             </div>

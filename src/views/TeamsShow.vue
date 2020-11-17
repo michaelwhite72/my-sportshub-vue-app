@@ -31,11 +31,11 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-12">
-                <div class="category-box-lg">
-                  <img :src="team.official_logo" alt="" class="img-fluid" />
-                  <h3>
+                <div style= "text-align:center" class="category-box-lg">
+                  <img :src="team.official_logo" alt="" height="250" width="250"/>
+                  <h6>
                     <a href="">{{ team.name }}</a>
-                  </h3>
+                  </h6>
                   <ul class="list-unstyled list-inline tag-dat">
                     <li class="list-inline-item">
                       Season: {{ selectedSeason }}
@@ -77,7 +77,7 @@
                   
                 </div>
               </div>
-
+            
               <div v-for="article in team.articles" class="col-md-12">
                 <div class="category-box2 d-flex">
                   <div class="cat-img">
@@ -162,7 +162,7 @@ export default {
         });
     },
     relativeDate: function(date) {
-      return moment(date).calendar();
+      return moment(date).calendar("MMMM Do YYYY");
     },
     dateCompare: function(date) {
       return new Date();
