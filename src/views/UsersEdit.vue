@@ -205,12 +205,18 @@
     <dialog id="password-change">
       <form method="dialog">
         <h2>Password Change</h2>
-
-        <div class="form-group">
+        <p>(only updates if passwords match)</p>
+        <br />
+        <!-- <div class="form-group">
           <label>Old Password:</label>
           <input type="password" class="form-control" v-model="oldPassword" />
-        </div>
+        </div> -->
         <div class="form-group">
+          <ul>
+            <li class="text-warning" v-for="error in errors">
+              {{ error }}
+            </li>
+          </ul>
           <label>Password:</label>
           <input type="password" class="form-control" v-model="password" />
         </div>
@@ -221,8 +227,13 @@
             class="form-control"
             v-model="passwordConfirmation"
           />
-          <br />
-          <button v-on:click="updatePassword()">
+          <!-- Only makes update button visible if password and pwconf match, and PW is not null -->
+          <button
+            v-if="
+              `${password}` === `${passwordConfirmation}` && `${password}` != ''
+            "
+            v-on:click="updatePassword()"
+          >
             Update Password
           </button>
           <button>
@@ -268,9 +279,6 @@ export default {
       var params = {
         name: this.user.name,
         email: this.user.email,
-        // password: this.password,
-        // password_confirmation: this.passwordConfirmation,
-        // old_password: this.oldPassword,
         team_ids: this.checkedTeams,
       };
       axios
@@ -291,8 +299,21 @@ export default {
     },
     updatePassword: function() {
       console.log("Update Password button works");
+      var params = {
+        password: this.password,
+        password_confirmation: this.passwordConfirmation,
+        // old_password: this.oldPassword,
+      };
+      axios
+        .patch(`/api/users/${this.$parent.getUserId()}`, params)
+        .then((response) => {
+          // Currenly pushing to UserShow, but may want to LOGOUT instead
+          this.$router.push(`/users/${this.$parent.getUserId()}`);
+        })
+        .catch((error) => {
+          this.errors = error.response.data.errors;
+        });
     },
   },
 };
 </script>
-`/api/teams/${this.$route.params.id}`

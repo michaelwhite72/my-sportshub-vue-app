@@ -137,7 +137,7 @@
     <footer class="footer-area">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-5">
             <div class="f-about">
               <img
                 src="https://alcalde.texasexes.org/wp-content/uploads/2013/01/Tower_MarshaMiller.jpg"
@@ -145,8 +145,9 @@
               />
               <p>
                 This application was created to provide the average fan a
-                location to view the schedules of their favorite sports team,
-                stats, and latest news in one convenient location.
+                location to view the select their favorite sports team(s), and
+                have quick access viewing of the schedule, stats, and latest
+                news in one convenient location.
               </p>
               <ul class="list-unstyled f-contact">
                 <li><i class="fa fa-map-marker"></i>Kyle, TX 78740</li>
@@ -204,7 +205,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="f-service">
               <div class="sec-title">
                 <h5>Coming Soon</h5>
