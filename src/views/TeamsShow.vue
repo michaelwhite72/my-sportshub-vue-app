@@ -101,8 +101,7 @@
                     <p>{{ article.description }}</p>
 
                     <a :href="`${article.url}`" target="_blank"
-                      >Read More <i class="fa fa-angle-right"></i
-                    ></a>
+                      ></a>
                   </div>
                 </div>
               </div>

@@ -17,7 +17,16 @@
       </div>
     </section>
     <!-- End Web Ticker -->
-    <!-- News Area -->
+
+    <!-- Slider Area 3 -->
+    <section class="slider-area3">
+      <div class="container">
+        <div class="row"></div>
+      </div>
+    </section>
+    <!-- End Slider Area 3 -->
+
+    <!-- News Area -from Home2 -->
     <section class="news-area">
       <div class="container">
         <div class="row">

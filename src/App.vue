@@ -97,14 +97,12 @@
           <div class="col-md-12">
             <div class="mobile-menu">
               <nav id="dropdown">
-                <a href=""><img src="" alt=""/></a>
+                <a href=""><img src="" alt="" />My Sports Hub</a>
                 <ul class="list-unstyled">
                   <li></li>
-                  <li>
-                    <router-link to="/">Home</router-link>
-                  </li>
+
                   <li v-if="isLoggedIn()">
-                    <router-link to="/user_teams">My Teams</router-link>
+                    <router-link to="/user_teams">Home</router-link>
                   </li>
                   <li>
                     <router-link to="/teams">All Teams</router-link>
@@ -116,12 +114,12 @@
                     <router-link to="/Signup">New User</router-link>
                   </li>
                   <li v-if="isLoggedIn()">
-                    <router-link to="/Logout"> Logout</router-link>
-                  </li>
-                  <li v-if="isLoggedIn()">
                     <router-link :to="`/users/${getUserId()}`">
                       Show User Info</router-link
                     >
+                  </li>
+                  <li v-if="isLoggedIn()">
+                    <router-link to="/Logout"> Logout</router-link>
                   </li>
                 </ul>
               </nav>
@@ -145,9 +143,9 @@
               />
               <p>
                 This application was created to provide the average fan a
-                location to view the select their favorite sports team(s), and
-                have quick access viewing of the schedule, stats, and latest
-                news in one convenient location.
+                location to select and view their favorite team(s), and have
+                quick access for viewing the current team schedule, stats, and
+                latest news in one convenient location.
               </p>
               <ul class="list-unstyled f-contact">
                 <li><i class="fa fa-map-marker"></i>Kyle, TX 78740</li>

@@ -7,6 +7,7 @@
           <div class="col-lg-12">
             <div class="get-in-touch">
               <div class="sec-title">
+                <br />
                 <h5>EDIT INFORMATION</h5>
               </div>
               <!-- Edit Name & Email -->
@@ -195,8 +196,10 @@
           </div>
           <!-- MLB End -->
         </div>
-        <span>Checked names: {{ checkedTeams }}</span>
-        <br />
+        <!-- Sanity Check for checked teams -->
+        <!-- <span>Checked names: {{ checkedTeams }}</span>
+        <br /> -->
+        <!-- Sanity Check End -->
       </div>
     </section>
     <!-- End League/Team Select -->

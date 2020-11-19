@@ -7,6 +7,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="sec-top text-center">
+              <br />
               <h4>User Information</h4>
             </div>
           </div>
